@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import {IExtsload} from "./interfaces/IExtsload.sol";
+// import {IExtsload} from "./interfaces/IExtsload.sol";
 
 /// @notice Enables public storage access for efficient state retrieval by external contracts.
 /// https://eips.ethereum.org/EIPS/eip-2330#rationale
-abstract contract Extsload is IExtsload {
+abstract contract Extsload /* is IExtsload */ {
     /*
      * ── SOLIDITY MEMORY LAYOUT ──────────────────────────────────────────
      *
@@ -129,7 +129,7 @@ abstract contract Extsload is IExtsload {
      *
      * This function reads one storage slot and returns its bytes32 value.
      */
-        /// @inheritdoc IExtsload
+       // /// @inheritdoc IExtsload
     function extsload(bytes32 slot) external view returns (bytes32) {
         assembly ("memory-safe") {
             /*
